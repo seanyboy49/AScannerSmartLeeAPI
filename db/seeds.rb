@@ -13,3 +13,5 @@ Shoe.create!([
   {brand: "UGG", style: "W Classic Short II", style_number: "1016223", color: "CHE", quantity: 23, size: 8, UPC: 190108095517, description:"Keep feet cute and cozy in these Classic Short boots from UGG, which feature plush sheekskin construction both inside and out, and a shaft that can stay straight up or be rolled down. Featured in chestnut", created_at: DateTime.new(2001,2,3,4,5,6), updated_at: DateTime.new(2017,6, 5, 4, 3, 2, 1)},
   {brand: "UGG", style: "W Bailey Bow II", style_number: "1016225", color: "GREY", quantity: 15, size: 8, UPC: 190108090338, description:"Two bows adorably update our iconic boot which boasts soft Twinface that has been pretreated for protection against water and stains. Also new is our revolutionary Treadlite by UGG sole which cushions feet and grips exceptionally well on both wet and dry surfaces.", created_at: DateTime.new(2001,2,3,4,5,6), updated_at: DateTime.new(2017,6, 5, 4, 3, 2, 1)}
 ])
+
+Shoe.where(style: "W Bailey Button II")
