@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-
-    render(status: 200, json: Shoe.all)
+    shoes = Array.new(Shoe.all)
+    render :json => shoes
+    p shoes
   end
 end
