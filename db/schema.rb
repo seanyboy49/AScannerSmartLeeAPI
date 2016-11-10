@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20161110003136) do
     t.string   "color"
     t.integer  "size"
     t.integer  "quantity"
-    t.integer  "upc"
+    t.bigint   "upc"
     t.integer  "style_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

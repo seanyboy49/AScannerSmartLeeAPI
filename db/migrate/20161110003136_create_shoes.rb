@@ -4,7 +4,7 @@ class CreateShoes < ActiveRecord::Migration[5.0]
       t.string :color
       t.integer :size
       t.integer :quantity
-      t.integer :upc
+      t.integer :upc, :limit => 8
       t.references :style, foreign_key: true
 
       t.timestamps
