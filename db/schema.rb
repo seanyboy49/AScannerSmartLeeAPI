@@ -10,22 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103221523) do
+ActiveRecord::Schema.define(version: 20161110003136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "shoes", force: :cascade do |t|
-    t.string   "brand"
-    t.string   "style"
-    t.string   "style_number"
-    t.string   "color"
-    t.integer  "quantity"
-    t.integer  "size"
-    t.string   "UPC"
-    t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  create_table "shoes", force: :cascade do |t|
+    t.string   "color"
+    t.integer  "size"
+    t.integer  "quantity"
+    t.bigint   "upc"
+    t.integer  "style_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["style_id"], name: "index_shoes_on_style_id", using: :btree
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "style_number"
+    t.integer  "brand_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["brand_id"], name: "index_styles_on_brand_id", using: :btree
+  end
+
+  add_foreign_key "shoes", "styles"
+  add_foreign_key "styles", "brands"
 end
