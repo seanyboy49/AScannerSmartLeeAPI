@@ -10,11 +10,11 @@ var Inventory = React.createClass({
             <img src= "Classic-Short.jpg" width="100%" height="auto"/>
           </div>
           <div className="Shoe-Stats">
-           <h1>{shoe.brand} {shoe.style}</h1>
+           <h1>{shoe.style.brand.name} {shoe.style.name}</h1>
+           <p>Color: {shoe.color}</p>
            <p>Quantity: {shoe.quantity}</p>
            <p>Size: {shoe.size}</p>
-           <p>UPC Code: {shoe.UPC}</p>
-           <p>Description: {shoe.description}</p>
+           <p>UPC Code: {shoe.upc}</p>
           </div>
        </div>
       )

@@ -11,7 +11,7 @@ var App = React.createClass({
 
   componentWillMount: function() {
     $.ajax({
-      url: `/api/shoe`,
+      url: '/api/shoe',
       dataType: "json",
       success: function(data) {
         this.setState({data: data})
